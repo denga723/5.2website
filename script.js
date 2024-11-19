@@ -72,3 +72,8 @@ const data = [
     d3.select(this).style("fill", "red");
   });
   
+  bars.transition()
+  .duration(1000)
+  .delay((d, i) => i * 100)
+  .attr("y", d => yScale(d.emissions))
+  .attr("height", d => chartHeight - yScale(d.emissions));
